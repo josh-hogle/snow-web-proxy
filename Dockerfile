@@ -9,9 +9,7 @@ COPY files /
 
 # Configure image
 RUN \
-	ln -sf server.crt /usr/local/apache2/certs/snow.crt && \
-	ln -sf server.pem /usr/local/apache2/certs/snow.pem && \
-	chmod 0640 /usr/local/apache2/certs/server.pem && \
+	mkdir -p /usr/local/apache2/certs /usr/local/apache2/vhosts && \
 	chown -hR daemon:daemon /usr/local/apache2/certs
 
 # Expose ports
