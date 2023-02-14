@@ -67,7 +67,8 @@ To define a vanity URL, you should create an Apache configuration file such as t
 
 If you choose to use the virtual host configuration above, you will need to alter the following:
 
-- Be sure to update the `ServerName` and `ServerAlias` (or comment it out if not being used) with the FQDN(s) of the host names that you wish to use for your ServiceNow vanity URL
+- Be sure to update the `ServerName` and `ServerAlias` (or comment it out if not being used) with the FQDN(s) of the host names that you wish to use for your ServiceNow vanity URL.
+- Update the `ProxyPass` directive to reflect the actual URL of your ServiceNow developer instance.
 - Within the `/usr/local/apache2/certs` folder inside the container, place a legitimate SSL certificate in a file named `snow.crt` (or alter the `SSLCertificateFile` setting) and the private key in a file named `snow.pem` (or alter the `SSLCertificateKeyFile` setting).
 - Be sure the SSL private key is set to mode `0600` or `0640` and owned by uid `2`.
 
